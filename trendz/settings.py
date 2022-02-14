@@ -25,7 +25,7 @@ SECRET_KEY = '403he_-u87!%j%u$l@@%cok3ld_624o2@on+dehwus=z1_czua'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['trendz-vistula-env.eba-hvg9u23g.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition

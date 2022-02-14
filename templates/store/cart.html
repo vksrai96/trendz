@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
+
 
 <section class="section-content padding-y bg">
 <div class="container">
 
 <!-- ============================ COMPONENT 1 ================================= -->
-
 {% if not cart_items %}
-<h2 class="text-center">Your Shopping Is Empty</h2>
-<br>
-<div class="text-center">
-	<a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
-</div>
+	<h2 class="text-center">Your Shopping Cart is Empty</h2>
+	<br>
+	<div class="text-center">
+		<a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+	</div>
 {% else %}
-<!--- message -->
 <div class="row">
 	<aside class="col-lg-9">
 <div class="card">
@@ -69,7 +69,7 @@
 	<td>
 		<div class="price-wrap">
 			<var class="price">$ {{ cart_item.sub_total }}</var>
-			<small class="text-muted"> $ {{ cart_item.product.price }} </small>
+			<small class="text-muted"> $ {{ cart_item.product.price }} each </small>
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right">
@@ -89,7 +89,7 @@
 		<div class="card-body">
 			<dl class="dlist-align">
 			  <dt>Total price:</dt>
-			  <dd class="text-right">$ {{ total}}</dd>
+			  <dd class="text-right">$ {{total}}</dd>
 			</dl>
 			<dl class="dlist-align">
 			  <dt>Tax:</dt>
@@ -104,7 +104,7 @@
 				<img src="{% static './images/misc/payments.png' %}" height="26">
 			</p>
 			<a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Checkout </a>
-			<a href="{% url 'store'%}" class="btn btn-light btn-block">Continue Shopping</a>
+			<a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
 
@@ -115,8 +115,8 @@
 {% endif %}
 <!-- ============================ COMPONENT 1 END .// ================================= -->
 
-
 </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
+
 {% endblock %}
